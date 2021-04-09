@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.cloudmonitor && cd ~/.cloudmonitor
+mkdir -p ~/.cabin && cd ~/.cabin
 
-curl -sL https://raw.githubusercontent.com/EmilMoe/clomo/main/init.sh | bash -
-curl -sL https://raw.githubusercontent.com/EmilMoe/clomo/main/setup_webserver.sh | bash -
-curl -sL -o /usr/local/bin/clomo https://raw.githubusercontent.com/EmilMoe/clomo/main/setup_webserver.sh
+curl -sL https://raw.githubusercontent.com/EmilMoe/cabin/main/init.sh | bash -
+curl -sL https://raw.githubusercontent.com/EmilMoe/cabin/main/setup_webserver.sh | bash -
+curl -sL -o /usr/local/bin/cabin https://raw.githubusercontent.com/EmilMoe/cabin/main/setup_webserver.sh
 
-chmod +x /usr/local/bin/clomo
+chmod +x /usr/local/bin/cabin
