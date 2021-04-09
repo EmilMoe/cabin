@@ -1,0 +1,61 @@
+version: '3'
+services:
+
+  httpd:
+    image: cloudmonitor/caddy
+    restart: unless-stopped
+    links:
+      - app
+    env_file:
+      - .env
+    networks:
+      - app-network
+      - web
+    labels:
+      - traefik.http.routers.cloudmonitor.rule=Host(`domain`)
+      - traefik.http.routers.cloudmonitor.entrypoints=websecure
+      - traefik.http.routers.cloudmonitor.tls=true
+      - traefik.http.routers.cloudmonitor.tls.certresolver=leresolver
+    volumes:
+      - app-data:/var/www/html
+
+  app:
+    image: cloudmonitor
+    restart: unless-stopped
+    volumes:
+      - app-data:/var/www/html
+    networks:
+      - app-network
+
+  scheduler:
+    image: cloudmonitor/scheduler
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+        - app
+    volumes:
+        - app-data:/var/www/html
+    networks:
+      - app-network
+
+  worker:
+    image: cloudmonitor/worker
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+        - app
+    volumes:
+        - app-data:/var/www/html
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+  web:
+    external: true
+
+volumes:
+  app-data:
