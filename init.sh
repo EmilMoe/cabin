@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 mkdir -p ~/.cloudmonitor
 
 apt-get update
