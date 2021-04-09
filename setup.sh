@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.cabin && cd ~/.cabin
+mkdir -p ~/.cabin
 
 curl -sL https://raw.githubusercontent.com/EmilMoe/cabin/main/init.sh | bash -
 curl -sL https://raw.githubusercontent.com/EmilMoe/cabin/main/setup_webserver.sh | bash -
