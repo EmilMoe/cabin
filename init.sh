@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.cloudmonitor
+if [ ! -f "~/.cloudmonitor/initialized" ]
+then
+  mkdir -p ~/.cloudmonitor
 
-apt-get update
-apt-get upgrade -yq
-apt-get install wget docker.io -yq
+  apt-get update
+  apt-get upgrade -yq
+  apt-get install wget docker.io -yq
 
-echo true > ~/.cloudmonitor/initialized
+  echo true > ~/.cloudmonitor/initialized
+fi
