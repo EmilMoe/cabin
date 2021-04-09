@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.cloudmonitor
+mkdir -p ~/.cloudmonitor && cd ~/.cloudmonitor
 wget https://github.com/EmilMoe/clomo/archive/refs/heads/main.zip
 apt-get install unzip -yq
 unzip main.zip && rm main.zip
