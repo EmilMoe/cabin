@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
 
+if [[ $1 = "create" ]] ; then
+  mkdir -p ~/.cabin/apps/${2}
+  
+fi
