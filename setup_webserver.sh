@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! -f "~/.cloudmonitor/initialized" ]
+if [ ! -f "~/.cloudmonitor/setup_webserver" ]
 then
   mkdir ~/traefik-proxy && cd ~/traefik-proxy
   wget https://raw.githubusercontent.com/EmilMoe/traefik-proxy/main/docker-compose.yml
