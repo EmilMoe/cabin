@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/.cloudmonitor && cd ~/.cloudmonitor
-wget https://github.com/EmilMoe/clomo/archive/refs/heads/main.zip
-apt-get install unzip -yq
-unzip main.zip . && rm main.zip
-chmod +x init.sh setup_webserver.sh
-mv clomo /usr/local/bin/clomo && chmod +x /usr/local/bin/clomo
-sh init.sh
+
+curl -sL https://raw.githubusercontent.com/EmilMoe/clomo/main/init.sh | bash -
+curl -sL https://raw.githubusercontent.com/EmilMoe/clomo/main/setup_webserver.sh | bash -
+curl -sL -o /usr/local/bin/clomo https://raw.githubusercontent.com/EmilMoe/clomo/main/setup_webserver.sh
+
+chmod +x /usr/local/bin/clomo
