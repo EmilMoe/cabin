@@ -7,7 +7,7 @@ fi
 
 if [[ $1 = "reset proxy" ]] ; then
   curl -L https://raw.githubusercontent.com/EmilMoe/traefik-proxy/main/docker-compose.yml -o /usr/locale/bin/cabin
-  chmod a+rs /usr/locale/bin/cabin
+  chmod +x /usr/locale/bin/cabin
 fi
 
 if [[ $1 = "selfupdate" ]] ; then
