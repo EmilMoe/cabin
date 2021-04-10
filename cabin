@@ -12,5 +12,5 @@ fi
 
 if [[ $1 = "selfupdate" ]] ; then
   curl -L -o /usr/local/bin/cabin https://raw.githubusercontent.com/EmilMoe/cabin/main/cabin
-  chmod +x /usr/locale/bin/cabin
+  chmod +x /usr/local/bin/cabin
 fi
