@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 if [[ $1 = "create" ]] ; then
+  CURRENT_DIR=${pwd}
   mkdir -p ~/.cabin/apps/${2}
-  
+  cd ~/.cabin/apps/${2}
+  curl -sL -o Dockerfile https://raw.githubusercontent.com/EmilMoe/app/main/Dockerfile
+  docker build .
+  cd ${CURRENT_DIR}
 fi
 
 if [[ $1 = "reset-proxy" ]] ; then
