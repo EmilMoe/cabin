@@ -1,9 +1,4 @@
 # Install
-
-```
-curl -sL https://raw.githubusercontent.com/EmilMoe/cabin/main/setup.sh | bash -
-```
-
 ```
 apt-get update \
 && apt-get upgrade -yq \
