@@ -1,6 +1,7 @@
 # Install
 ```
-apt-get update \
+export DEBIAN_FRONTEND=noninteractive \
+&& apt-get update \
 && apt-get upgrade -yq \
 && apt-get install docker.io docker-compose -yq \
 && mkdir ~/.cabin/traefik-proxy \
